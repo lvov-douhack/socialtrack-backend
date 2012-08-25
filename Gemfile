@@ -27,6 +27,8 @@ end
 group :development do
   gem 'thin'
   gem 'hirb'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 gem 'jquery-rails'
