@@ -3,10 +3,10 @@
 <div class="get">
   <% current_user.stats_for.each do |stat| %>
     <div class="arc">
-      <span class="text"><%= stat[:networkname] %></span>
-      <input type="hidden" class="percent" value="<%= stat[:percent] %>" />
+      <span class="text"><%= stat.networkname %></span>
+      <input type="hidden" class="percent" value="<%= stat.percent.round(2) %>" />
       <input type="hidden" class="color" value="#aaaeee" />
     </div>
   <% end %>
 </div>
-<%= current_user.stats_for.inspect %>
+<%= current_user.stats_for.to_a.inspect %>

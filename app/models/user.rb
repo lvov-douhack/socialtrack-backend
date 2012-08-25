@@ -36,8 +36,20 @@ class User < ActiveRecord::Base
   end
 
   def stats_for(time = nil)
+    case time
+    when :hour
+      period = 1.hour.ago..Time.now
+      period_s = 1.hour.seconds
+    when :month
+      period = 1.month.ago..Time.now
+      period_s = 1.month.seconds
+    else
+      period = 1.day.ago..Time.now
+      period_s = 1.day.seconds
+    end
+    self.stat_records.where(created_at: period).group(:networkname).select([:networkname, "SUM(seconds) AS seconds", "SUM(seconds) / #{period_s}.0 * 100 as percent"])
     #self.stat_records.for_time(time)
-    [{time: 600, networkname: "vk.com", percent: (600.0 / 1.day * 100).round(2)}, {time: 1230, networkname: "facebook.com", percent: (1230.0 / 1.day * 100).round(2)}]
+    #[{time: 600, networkname: "vk.com", percent: (600.0 / 1.day * 100).round(2)}, {time: 1230, networkname: "facebook.com", percent: (1230.0 / 1.day * 100).round(2)}]
   end
 
 end

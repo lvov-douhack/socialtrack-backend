@@ -9,7 +9,7 @@ module Api
     end
 
     def post
-      render json: {}
+      stat = current_user.stat_records.build
     end
 
     def me

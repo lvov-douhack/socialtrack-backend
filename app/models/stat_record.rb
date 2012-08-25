@@ -11,11 +11,16 @@
 
 class StatRecord < ActiveRecord::Base
 
-  scope for_time, lambda do |time|
-    if time.blank?
-      StatRecord.where("created_at >= ?", Time.now.beginning_of_day)
-    end
-
-  end
+#  def for_time time
+#    case time
+#    when :hour
+#      period = 1.hour.ago..Time.now
+#    when :month
+#      period = 1.month.ago..Time.now
+#    else
+#      period = 1.day.ago..Time.now
+#    end
+    #StatRecord.where(
+#  end
 
 end
