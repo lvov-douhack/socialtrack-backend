@@ -29,6 +29,7 @@ group :development do
   gem 'hirb'
   gem 'pry'
   gem 'pry-nav'
+  gem 'annotate'
 end
 
 gem 'jquery-rails'
