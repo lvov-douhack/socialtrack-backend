@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'devise_oauth2_providable'
 
+gem 'js-routes'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -25,6 +27,7 @@ end
 
 group :development do
   gem 'thin'
+  gem 'hirb'
 end
 
 gem 'jquery-rails'
