@@ -8,7 +8,6 @@ gem 'rails', '3.2.6'
 gem 'sqlite3'
 
 gem 'devise'
-gem 'devise_oauth2_providable'
 
 gem 'js-routes'
 

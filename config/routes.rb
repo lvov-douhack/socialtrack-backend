@@ -4,6 +4,6 @@ SocialtrackBackend::Application.routes.draw do
   root to: 'index#home'
 
   namespace :api do
-    mount Devise::Oauth2Providable::Engine => '/oauth2'
+    get '/me' => 'users#me'
   end
 end
