@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def generate_token!
-    self.update_attributes!(token: fast_token)
+    self.token = fast_token
   end
 
   private
