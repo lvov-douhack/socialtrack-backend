@@ -16,8 +16,13 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem 'twitter-bootstrap-rails'
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  gem 'thin'
 end
 
 gem 'jquery-rails'
@@ -29,7 +34,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
