@@ -5,6 +5,8 @@ SocialtrackBackend::Application.routes.draw do
   get '/token', to: 'index#token'
 
   namespace :api do
-    get '/me' => 'users#me'
+    get '/' => 'index#get'
+    post '/' => 'index#post'
+    get '/me' => 'index#me'
   end
 end

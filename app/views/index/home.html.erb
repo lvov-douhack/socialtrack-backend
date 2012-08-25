@@ -1,7 +1,16 @@
 <div class="hero-unit">
   <h1>Wasted Time Tracker</h1>
   <p>Do you think sometimes how much your time is spent in social networks? How much time is wasted, clearly. We are trying to provide some stats for you.</p>
-  <p>
-    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-large' %>
-  </p>
+  <% if user_signed_in? %>
+    <p>
+    Welcome, <strong><%= current_user.email %></strong>
+    </p>
+    <p>
+    You can take look on your <a href='#'>stats</a> or <%= link_to 'token', token_path %> 
+    </p>
+  <% else %>
+    <p>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-large' %>
+    </p>
+  <% end %>
 </div>
