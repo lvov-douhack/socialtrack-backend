@@ -12,22 +12,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def generate_token!
-    self.token = fast_token
-  end
-
-  private
-
-  def fast_token
-    values = [
-      rand(0x0010000),
-      rand(0x0010000),
-      rand(0x0010000),
-      rand(0x0010000),
-      rand(0x0010000),
-      rand(0x1000000),
-      rand(0x1000000),
-    ]
-    "%04x%04x%04x%04x%04x%06x%06x" % values
+    self.token = Digest::MD5.hexdigest(self.email)
   end
 
 end
