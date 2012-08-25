@@ -35,4 +35,9 @@ class User < ActiveRecord::Base
     self.token = Digest::MD5.hexdigest(self.email)
   end
 
+  def stats_for(time = nil)
+    #self.stat_records.for_time(time)
+    [{time: 600, networkname: "vk.com", percent: (600.0 / 1.day * 100).round(2)}, {time: 1230, networkname: "facebook.com", percent: (1230.0 / 1.day * 100).round(2)}]
+  end
+
 end

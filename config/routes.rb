@@ -3,6 +3,7 @@ SocialtrackBackend::Application.routes.draw do
 
   root to: 'index#home'
   get '/token', to: 'index#token'
+  get '/stats', to: 'index#stats'
 
   namespace :api do
     get '/' => 'index#get'

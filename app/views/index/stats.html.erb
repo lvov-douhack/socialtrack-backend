@@ -1,0 +1,12 @@
+<div id="diagram"></div>
+
+<div class="get">
+  <% current_user.stats_for.each do |stat| %>
+    <div class="arc">
+      <span class="text"><%= stat[:networkname] %></span>
+      <input type="hidden" class="percent" value="<%= stat[:percent] %>" />
+      <input type="hidden" class="color" value="#aaaeee" />
+    </div>
+  <% end %>
+</div>
+<%= current_user.stats_for.inspect %>

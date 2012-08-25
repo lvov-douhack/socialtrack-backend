@@ -10,5 +10,12 @@
 #
 
 class StatRecord < ActiveRecord::Base
-  # attr_accessible :title, :body
+
+  scope for_time, lambda do |time|
+    if time.blank?
+      StatRecord.where("created_at >= ?", Time.now.beginning_of_day)
+    end
+
+  end
+
 end

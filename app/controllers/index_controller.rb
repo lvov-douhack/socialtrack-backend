@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:token]
+  before_filter :authenticate_user!, only: [:token, :stats]
 
   def home
 
@@ -8,6 +8,10 @@ class IndexController < ApplicationController
 
   def token
     @user = current_user
+  end
+
+  def stats
+
   end
 
 end

@@ -5,8 +5,7 @@ module Api
     before_filter :authorize_by_token!
 
     def get
-      render json: {}
-      #render json: {user: current_user.stats_for(1.day.ago)}
+      render json: {stats: current_user.stats_for(1.day.ago)}
     end
 
     def post

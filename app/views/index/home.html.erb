@@ -6,7 +6,7 @@
     Welcome, <strong><%= current_user.email %></strong>
     </p>
     <p>
-    You can take look on your <a href='#'>stats</a> or <%= link_to 'token', token_path %> 
+    You can take look on your <%= link_to 'stats', stats_path %> or <%= link_to 'token', token_path %> 
     </p>
 
   <% else %>
