@@ -2,6 +2,7 @@ module Api
   class IndexController < BaseController
     include Devise::Controllers::Helpers
 
+    skip_before_filter :verify_authenticity_token
     before_filter :authorize_by_token!
 
     def get
@@ -9,7 +10,10 @@ module Api
     end
 
     def post
-      stat = current_user.stat_records.build
+      params[:stats].each do |stat|
+        current_user.stat_records.create!(networkname: stat[:name], seconds: stat[:seconds], created_at: Time.at(params[:timestamp]).to_datetime)
+      end
+      render json: {}, status: :created
     end
 
     def me

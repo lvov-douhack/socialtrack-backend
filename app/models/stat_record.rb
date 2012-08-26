@@ -10,6 +10,7 @@
 #
 
 class StatRecord < ActiveRecord::Base
+  attr_accessible :networkname, :seconds, :created_at
 
   def self.for_time time
     case time
