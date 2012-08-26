@@ -11,7 +11,7 @@ var o = {
  
         r.circle(300, 300, 85).attr({ stroke: 'none', fill: '#193340' });
  
-        var title = r.text(300, 300, 'Time').attr({
+        var title = r.text(300, 300, '24 hours').attr({
             font: '20px Arial',
             fill: '#fff'
         }).toFront();
